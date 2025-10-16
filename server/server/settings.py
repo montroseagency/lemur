@@ -30,13 +30,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Local apps
-    'apps.accounts',
-    'apps.products',
-    'apps.orders',
-    'apps.delivery',
-    'apps.reviews',
-    'apps.notifications',
+    # Local apps - using full app config paths
+    'apps.accounts.apps.AccountsConfig',
+    'apps.products.apps.ProductsConfig',
+    'apps.orders.apps.OrdersConfig',
+    'apps.delivery.apps.DeliveryConfig',
+    'apps.reviews.apps.ReviewsConfig',
+    'apps.notifications.apps.NotificationsConfig',
 
     # Third-party
     'rest_framework',
@@ -85,6 +85,8 @@ DATABASES = {
     }
 }
 
+# Custom User Model
+AUTH_USER_MODEL = 'accounts.User'
 
 # Authentication & JWT (if using SimpleJWT)
 REST_FRAMEWORK = {
